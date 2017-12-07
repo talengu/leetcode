@@ -10,38 +10,38 @@
 //Test_OK 2017/3/18
 
 #include <stdio.h>
-
+#include <stdlib.h>
 /**
  * Note: The returned array must be malloced, assume caller calls free().
  */
 int *twoSum(int *nums, int numsSize, int target)
 {
-	int i, j;
- 	int * indices = (int *)malloc(sizeof(int) * 2);
- 	for (i = 0; i < numsSize; i++)
- 	{
- 			for (j = i+1; j < numsSize; j++)
- 			{
- 				if (target  == (nums[j]+nums[i]) )
- 				{
- 					indices[0] = i ;
- 					indices[1] = j ;
-					break;
- 				}
-			}
- 	}
- 		return indices;
+		int i, j;
+		int * indices = (int *)malloc(sizeof(int) * 2);
+		for (i = 0; i < numsSize; i++)
+		{
+				for (j = i+1; j < numsSize; j++)
+				{
+						if (target  == (nums[j]+nums[i]) )
+						{
+								indices[0] = i;
+								indices[1] = j;
+								break;
+						}
+				}
+		}
+		return indices;
 }
 
 
 int main(int argc, char const *argv[])
 {
-	printf("%s\n", "start");
-	int nums[5] = { -1,-2,-3,-4,-5 };
+		printf("%s\n", "start");
+		int nums[5] = { -1,-2,-3,-4,-5 };
 
-	int *arr=twoSum(nums, 5,-8);
-	printf("%d %d\n",arr[0],arr[1] );
-	return 0;
+		int *arr=twoSum(nums, 5,-8);
+		printf("%d %d\n",arr[0],arr[1] );
+		return 0;
 
 
 
