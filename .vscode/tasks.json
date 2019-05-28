@@ -1,0 +1,60 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build_debug",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",
+                "${fileBasename}",
+                "-o${fileBasenameNoExtension}.out"
+            ]
+        },
+        {
+            "label": "Build and Run",
+            "dependsOn": [
+                "build",
+                "run"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
+        },
+        {
+            "label": "build",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "${fileBasename}",
+                "-o${fileBasenameNoExtension}.out"
+            ]
+        },
+        {
+            "label": "run",
+            "type": "shell",
+            "command": "./${fileBasenameNoExtension}.out"
+        },
+        {
+            "label": "Python Run",
+            "type": "shell",
+            "command": "python3",
+            "args": [
+                "${fileBasename}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [
+                "$eslint-compact"
+            ]
+        }
+    ]
+}
