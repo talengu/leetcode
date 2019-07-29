@@ -9,7 +9,8 @@
             "command": "g++",
             "args": [
                 "-g",
-                "${fileBasename}",
+               // "${fileBasename}",
+               "${file}",
                 "-o${fileBasenameNoExtension}.out"
             ]
         },
@@ -32,21 +33,21 @@
             "type": "shell",
             "command": "g++",
             "args": [
-                "${fileBasename}",
-                "-o${fileBasenameNoExtension}.out"
+                "${file}",
+                "-o${fileDirname}/${fileBasenameNoExtension}.out"
             ]
         },
         {
             "label": "run",
             "type": "shell",
-            "command": "./${fileBasenameNoExtension}.out"
+            "command": "${fileDirname}/${fileBasenameNoExtension}.out"
         },
         {
             "label": "Python Run",
             "type": "shell",
             "command": "python3",
             "args": [
-                "${fileBasename}"
+                "${file}"
             ],
             "group": {
                 "kind": "build",
