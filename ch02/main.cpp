@@ -41,7 +41,7 @@ int main(int argc, char const *argv[])
 	int *arr = generateRandomArray(n, 0, n);
 
 	float a[5]={1,2,3.2,5,4};
-	Student d[4]={{"A",12},{"B",14},{"C",34},{"D",9}};
+	Student d[4]={{"A",12},{"c",14},{"C",14},{"D",9}};
 
 
 	selectionSort(d,4);
