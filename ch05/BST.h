@@ -118,6 +118,13 @@ class BST
 		void remove(Key key){
 			root=remove(root,key);
 		}
+		// TODO: floor ceil
+		
+		// TODO: select rank
+		// TODO: 支持重复的二分搜索树。
+		// TODO: 平衡二叉树：如红黑树
+		// TODO: 平衡二叉树和堆 treap 
+		// trie 的实现，字典，比较一哈bst的性能差。
 	private:
 		// 以node为根进行插入操作。
 		// 递归实现
