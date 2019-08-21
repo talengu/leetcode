@@ -24,7 +24,7 @@ public:
 			g.push_back(vector<int>());
 		
 	};
-	 ~SparseGraph();
+	 ~SparseGraph(){};
 	 int V(){return n;}
 	 int E(){ return m; }
 
@@ -37,6 +37,53 @@ public:
 			 g[w].push_back(v);
 		 m++;
 	 }
+	 bool hasEdege(int v,int w){
+		 assert(v>=0 && v<n);
+		 assert(w>=0 && w<n);
+		 for (unsigned long i = 0; i < g[v].size(); i++) 
+			 if(g[v][i]==w)
+				 return true;
+		 return false;	
+	 }
+	 void show(){
+		 for (int i = 0; i < n; ++i) {
+			 cout<<"vertex "<<i<<":\t";
+			 for (int j = 0; j < g[i].size(); ++j) 
+				 cout<<g[i][j]<<"\t";
+			cout<<endl;
+			 	
+			 
+		 	
+		 }
+	 }
+	 class adjIterator{
+		 private:
+			 SparseGraph &G;
+			 int v;
+			 int index;
+		 public:
+			 adjIterator(SparseGraph &graph,int v):G(graph){
+				 this->v=v;
+				 this->index=0;
+			 }
+			 int begin(){
+				 index=0;
+				 if(G.g[v].size())
+					 return G.g[v][index];
+				 return -1;
+
+			 }
+			 int next(){
+				 index++;
+				 if(index<=G.g[v].size())
+					 return G.g[v][index];
+				 return -1;
+			 }
+			 bool end(){
+				 return index>=G.g[v].size();
+			 }
+	 };
+
 	};
 
 #endif /* SPARSEGRAPH_H */
