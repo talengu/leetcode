@@ -7,7 +7,7 @@
         {
             "label": "make_bin",
             "type": "shell",
-            "command": "if [ ! -d ${fileDirname}/bin ]; then mkdir ${fileDirname}/bin; fi"
+            "command": "mkdir -p ${fileDirname}/bin"
         },
         {
             "type": "shell",
