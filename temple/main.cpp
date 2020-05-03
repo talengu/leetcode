@@ -4,7 +4,7 @@
 #include <algorithm>
 using namespace std;
 
-//#define LOCAL
+#define LOCAL
 int main()
 {
 #ifndef LOCAL
