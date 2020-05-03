@@ -1,0 +1,4 @@
+.vscode/ipch/*
+*.out**
+*/main
+**/bin/**
