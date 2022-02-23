@@ -1,2 +1,6 @@
-90
-hello
+4 3
+ABC
+ACD
+ABC
+ACD
+BCD

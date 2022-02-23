@@ -14,6 +14,7 @@
 //TODO:not ok
 
 #include <stdio.h>
+#include <stdbool.h>
 
 bool isRepeat(char *s, int offset) {
 		static int value[26];
